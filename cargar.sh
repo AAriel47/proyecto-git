@@ -1,4 +1,4 @@
-#./bin/sh
+#!/bin/sh
 export rama=$(git rev-parse --abbrev-ref --short HEAD)
 clear
 eval $(ssh-agent -s)
@@ -11,4 +11,4 @@ ssh-add ~/.ssh/proyecto_Git
 ssh-add -l
 git push github $rama
 git pull github $rama
-
+ssh-agent -k
