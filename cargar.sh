@@ -1,9 +1,14 @@
 #!/bin/sh
+set -e
 clear
 export rama=$(git symbolic-ref --short HEAD)
 if [ -z "$rama" ]; then
 	echo "Error: No estás en una rama válida (posible HEAD desasociado)."
 	exit 1
+fi
+if ! git diff --quiet; then
+  echo "Tenés cambios sin commitear"
+  exit 1
 fi
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_ed25519
