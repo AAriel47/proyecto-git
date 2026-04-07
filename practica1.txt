@@ -1,0 +1,10 @@
+    1  mkdir proyecto-git
+    2  cd proyecto-git
+    3  git init
+    4  clear
+    5  git config --global user.name "Alejandro Ariel Uñate"
+    6  git config --global user.email "alejandroarielunate@gmail.com"
+    7  git config --global core.editor "code --wait"
+    8  git config --list
+    9  git config --show-origin --list
+   10  history > practica1.txt
